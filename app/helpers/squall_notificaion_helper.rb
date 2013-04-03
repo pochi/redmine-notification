@@ -1,0 +1,2 @@
+module SquallNotificaionHelper
+end

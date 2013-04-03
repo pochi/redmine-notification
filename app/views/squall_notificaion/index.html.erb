@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>Redmine通知ガジェット</title>
+  <meta name="description" content="Notification using Squall" />
+  <meta name="keywords" content="issue">
+  <%= csrf_meta_tag %>
+  <%= favicon %>
+
+  <%= javascript_include_tag "jquery-1.8.3-ui-1.9.2-ujs-2.0.3" %>
+  <%= javascript_include_tag "swfobject", :plugin => "squall_notification" %>
+  <%= javascript_include_tag "squall_client", :plugin => "squall_notification" %>
+  <%= javascript_include_tag "web_socket", :plugin => "squall_notification" %>
+  <%= javascript_include_tag "notification", :plugin => "squall_notification" %>
+</head>
+
+<h2>通知センター</h2>
+
+<input type="hidden" id="squall" value="<%= @auth_key%>" >
+<input type="hidden" id="user_id" value="<%= User.current.id %>" >
+<input type="hidden" id="guest_id" value="<%= @guest_id %>" >
+
+<button id="activate">通知を有効にする</button>
+<button id="confirm">通知状態を確認する</button>
